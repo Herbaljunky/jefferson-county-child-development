@@ -1,0 +1,114 @@
+/* Print-only stylesheet for references.html */
+
+/* Page layout */
+@page {
+  size: letter;
+  margin: 0.6in 0.7in;
+}
+
+html, body {
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Hide chrome that wastes paper */
+header, nav, footer, .mobile-menu-toggle {
+  display: none !important;
+}
+
+/* Expand content area for print */
+.container,
+.content-page {
+  width: 100% !important;
+  max-width: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  background: #ffffff !important;
+}
+
+/* Headings - simple, readable */
+h1 {
+  font-size: 20pt !important;
+  margin: 0 0 10pt 0 !important;
+  color: #000 !important;
+}
+h2 {
+  font-size: 14pt !important;
+  margin: 16pt 0 8pt 0 !important;
+  color: #000 !important;
+}
+.page-subtitle {
+  font-size: 11pt !important;
+  font-style: italic;
+  color: #000 !important;
+  margin-bottom: 12pt !important;
+}
+
+/* References list - APA style hanging indents */
+.reference-list p {
+  font-size: 11pt !important;
+  line-height: 1.35 !important;
+  margin: 0 0 8pt 0 !important;
+  padding-left: 1.5em !important;
+  text-indent: -1.5em !important;
+  break-inside: avoid;     /* avoid splitting a single reference */
+}
+
+/* General paragraphs */
+p {
+  font-size: 11pt !important;
+  line-height: 1.4 !important;
+  orphans: 3;
+  widows: 3;
+}
+
+/* Lists for agency directories */
+.references ul {
+  margin: 0 0 10pt 0 !important;
+  padding-left: 1.2em !important;
+}
+.references li {
+  font-size: 11pt !important;
+  line-height: 1.35 !important;
+  margin: 0 0 6pt 0 !important;
+  break-inside: avoid;
+}
+
+/* Show actual URLs after links when printed */
+a[href^="http"]:after {
+  content: " <" attr(href) ">";
+  font-size: 10pt;
+  word-break: break-all;
+}
+
+/* Remove colors and underlines for cleaner print, keep contrast */
+a,
+a:visited {
+  color: #000 !important;
+  text-decoration: none !important;
+}
+
+/* Remove non-essential UI ornaments */
+.development-card,
+.topic-card,
+.milestone-card,
+.download-card,
+.key-features,
+.reference-list,
+.content-page {
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+/* Space between sections without heavy rules */
+section {
+  margin: 0 0 14pt 0 !important;
+  padding: 0 !important;
+}
+
+/* Prevent awkward breaks inside headings */
+h1, h2 {
+  break-after: avoid;
+}
